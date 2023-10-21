@@ -1,4 +1,4 @@
-import { awesomeFn } from "@quramy/x-core";
+import { awesomeFn } from "@hold-ic/core";
 
 export async function main() {
   // dependencies across child packages

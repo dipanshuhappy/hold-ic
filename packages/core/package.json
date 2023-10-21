@@ -11,7 +11,14 @@
   "author": "Dipanshu Singh",
   "license": "MIT",
   "dependencies": {
-    "@types/node": "^18.0.0"
+    "@dfinity/agent": "^0.19.3",
+    "@dfinity/auth-client": "^0.19.3",
+    "@dfinity/candid": "^0.19.3",
+    "@dfinity/principal": "^0.19.3",
+    "@psychedelic/plug-inpage-provider": "2.4.1",
+    "@types/node": "^18.0.0",
+    "detect-mobile-browser": "^5.0.0",
+    "mobile-detect": "^1.4.5"
   },
   "devDependencies": {
     "typescript": "5.2.2"

@@ -14,7 +14,7 @@
   "author": "quramy",
   "license": "MIT",
   "dependencies": {
-    "@quramy/core": "^1.0.0",
+    "@hold-ic/core": "^1.0.0",
     "@types/node": "^18.0.0",
     "minimist": "^1.2.5"
   },

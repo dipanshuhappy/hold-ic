@@ -1,10 +1,9 @@
-export enum WalletType {
-    II,
-    Plug,
-    Stoic,
-    Icpbox,
-    AstroX,
-}
+import { HttpAgent, Identity } from "@dfinity/agent";
+import { Principal } from "@dfinity/principal";
+
+export type  WalletType = "II" | "Plug" | "Stoic" | "AstroX"
+
+
 
 export interface WalletResponse {
     type: WalletType;
@@ -13,4 +12,5 @@ export interface WalletResponse {
     identity?: Identity;
     agent?: HttpAgent;
 }
-  
+
+
