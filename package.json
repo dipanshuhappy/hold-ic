@@ -1,6 +1,7 @@
 {
-  "name": "hold-ic-workspaces",
-  "private": true,
+  "name": "hold-ic",
+  "private":"false",
+ 
   "scripts": {
     "clean": "rimraf -g \"packages/**/lib\" \"packages/**/*.tsbuildinfo\"",
     "compile": "tsc -b tsconfig.build.json",

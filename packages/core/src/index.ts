@@ -2,7 +2,7 @@ import { Provider } from "@psychedelic/plug-inpage-provider";
 import { connectPlug } from "./connector";
 import { WalletType } from "./connector/types";
 import { IDL } from "@dfinity/candid";
-import { timeStamp } from "console";
+
 
 export type PlugProvider = Provider
 export type CanistersInterface = {

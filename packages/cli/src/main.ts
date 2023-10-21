@@ -1,7 +1,10 @@
-import { awesomeFn } from "@hold-ic/core";
+import { HoldIC } from "@hold-ic/core";
 
 export async function main() {
   // dependencies across child packages
-  const out = await awesomeFn();
-  return out;
+  const holdIc = new HoldIC({
+    whitelist:[],
+ 
+  })
+  return holdIc;
 }

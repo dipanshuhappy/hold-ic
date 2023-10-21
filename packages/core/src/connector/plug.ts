@@ -1,5 +1,5 @@
 import { Provider, WalletConnectRPC } from '@psychedelic/plug-inpage-provider';
-import SmartPhone from 'detect-mobile-browser'
+
 export const connectPlug = async ({
     debug = true,
     whitelist = [],

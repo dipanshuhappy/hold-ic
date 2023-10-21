@@ -1,7 +1,8 @@
 {
   "name": "@hold-ic/core",
-  "version": "1.0.0",
-  "description": "Awesome functions",
+  "version":"1.0.0",
+  "private": false,
+  "description": "ICP utlitily functions",
   "main": "lib/index.js",
   "scripts": {
     "compile": "tsc"
@@ -10,15 +11,14 @@
   "keywords": [],
   "author": "Dipanshu Singh",
   "license": "MIT",
+  
   "dependencies": {
     "@dfinity/agent": "^0.19.3",
     "@dfinity/auth-client": "^0.19.3",
     "@dfinity/candid": "^0.19.3",
     "@dfinity/principal": "^0.19.3",
     "@psychedelic/plug-inpage-provider": "2.4.1",
-    "@types/node": "^18.0.0",
-    "detect-mobile-browser": "^5.0.0",
-    "mobile-detect": "^1.4.5"
+    "@types/node": "^18.0.0"
   },
   "devDependencies": {
     "typescript": "5.2.2"

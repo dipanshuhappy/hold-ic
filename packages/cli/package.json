@@ -1,6 +1,8 @@
 {
   "name": "@hold-ic/cli",
   "version": "1.0.0",
+  "private": "true",
+  
   "description": "Awesome CLI",
   "main": "lib/main.js",
   "bin": {
@@ -11,7 +13,7 @@
     "test": "node lib/main.spec.js"
   },
   "keywords": [],
-  "author": "quramy",
+  "author": "Dipanshu Singh",
   "license": "MIT",
   "dependencies": {
     "@hold-ic/core": "^1.0.0",
