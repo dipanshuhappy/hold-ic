@@ -1,7 +1,6 @@
 {
   "name": "hold-ic",
-  "private":"false",
- 
+  "private": "false",
   "scripts": {
     "clean": "rimraf -g \"packages/**/lib\" \"packages/**/*.tsbuildinfo\"",
     "compile": "tsc -b tsconfig.build.json",
@@ -13,6 +12,7 @@
     "prepare": "npm run compile"
   },
   "devDependencies": {
+    
     "prettier": "3.0.3",
     "rimraf": "5.0.5",
     "typescript": "5.2.2"

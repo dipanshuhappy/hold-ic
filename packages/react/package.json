@@ -1,0 +1,24 @@
+{
+  "name": "@hold-ic/react",
+  "version": "1.0.0",
+  "private": false,
+  "description": "ICP utils for @hold-ic/core",
+  "main": "lib/index.js",
+  "module": "lib/index.module.js",
+  "scripts": {
+    "compile": "microbundle "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^18.2.31",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@dfinity/agent": "^0.19.3",
+    "@hold-ic/core": "^1.0.0"
+  }
+}

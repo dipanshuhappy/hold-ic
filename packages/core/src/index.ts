@@ -5,12 +5,14 @@ import { IDL } from "@dfinity/candid";
 
 
 export type PlugProvider = Provider
+
 export type CanistersInterface = {
   [canisterName: string]: {
     canisterId: string;
     idlFactory: IDL.InterfaceFactory;
   };
 };
+export type  CanisterInterfaceKey  =  keyof CanistersInterface
 
 export class HoldIC {
 
@@ -69,7 +71,7 @@ export class HoldIC {
         break;
     }
   }
-  async getActor(name:keyof CanistersInterface){
+  async getActor(name:CanisterInterfaceKey){
     switch(this.wallet){
       case "Plug":
         if(this.canisters && this.canisters[name]){

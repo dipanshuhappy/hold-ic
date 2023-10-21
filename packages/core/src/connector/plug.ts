@@ -14,22 +14,22 @@ export const connectPlug = async ({
     timeout?: number;
     onConnectCallback: (...args: any[]) => any;
 })  =>{
-    if(!(window as any).ic?.plug){
-        window.open('https://plugwallet.ooo/', '_blank');
-        return;
+    if (!(window as any).ic?.plug) {
+        if (!/Mobi/i.test(window.navigator.userAgent)) {
+          window.open('https://plugwallet.ooo/', '_blank');
+          return;
+        }
+        const clientRPC = new WalletConnectRPC({ window, debug });
+  
+        const plugProvider = new Provider(clientRPC);
+        plugProvider.createActor
+  
+        const ic = (window as any).ic || {};
+        (window as any).ic = {
+          ...ic,
+          plug: plugProvider,
+        };
     }
-    const clientRPC = new WalletConnectRPC({
-        window:window,
-        debug
-    });
-    const plugProvider = new Provider(clientRPC);
-    const ic = (window as any).ic || {};
-    (window as any).ic = {
-        ...ic,
-        plug: plugProvider,
-    };
-
-   
     const connected = await (window as any)?.ic?.plug?.requestConnect({
         whitelist,
         host,
