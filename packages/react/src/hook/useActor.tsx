@@ -8,6 +8,7 @@ export default function useActor<T>(name: keyof CanistersInterface): Actor | und
 
     const [actor, setActor] = useState<Actor>()
     useEffect(() => {
+
         if (!actor) {
             holdIc.getActor(name).then((newActor) => {
                 setActor(newActor)

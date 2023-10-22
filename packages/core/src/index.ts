@@ -3,6 +3,7 @@ import { connectPlug } from "./connector";
 import { WalletType } from "./connector/types";
 import { IDL } from "@dfinity/candid";
 import { ActorSubclass } from "@dfinity/agent";
+import { disconnectPlug } from "./connector/plug";
 
 
 export type PlugProvider = Provider
@@ -80,6 +81,17 @@ export class HoldIC implements HoldICInterface {
       default:
         break;
      }
+  }
+
+  async disconnect(onDisconnectCallback: (...args: any[]) => any){
+    switch(this.wallet){
+      case "Plug":
+        await disconnectPlug({
+          onDisconnectCallback
+        })
+      default:
+        break;
+    }
   }
   async isConnected(){
     switch(this.wallet){

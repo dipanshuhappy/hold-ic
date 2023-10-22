@@ -1,6 +1,6 @@
 {
   "name": "@hold-ic/react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "description": "ICP utils for @hold-ic/core",
   "main": "lib/index.js",

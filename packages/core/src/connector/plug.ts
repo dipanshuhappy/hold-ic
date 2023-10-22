@@ -22,13 +22,15 @@ export const connectPlug = async ({
         const clientRPC = new WalletConnectRPC({ window, debug });
   
         const plugProvider = new Provider(clientRPC);
-        plugProvider.createActor
+      
   
         const ic = (window as any).ic || {};
         (window as any).ic = {
           ...ic,
           plug: plugProvider,
         };
+   
+        
     }
     const connected = await (window as any)?.ic?.plug?.requestConnect({
         whitelist,
@@ -37,4 +39,15 @@ export const connectPlug = async ({
     });
     if (!connected) return;
     onConnectCallback(connected);
+}
+
+export const disconnectPlug = async ({
+    onDisconnectCallback,
+}:{
+    onDisconnectCallback: (...args: any[]) => any;
+}) => {
+    await (window as any)?.ic?.plug.disconnect()
+    const connected = await (window as any)?.ic?.plug.isConnected()
+    if(connected) return;
+    onDisconnectCallback(connected);
 }
