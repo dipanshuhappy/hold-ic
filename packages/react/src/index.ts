@@ -6,5 +6,6 @@ import HoldIcProvider from "./provider/hold-ic";
 export {
     useActor,
     useHoldIc,
-    HoldIcProvider
+    HoldIcProvider,
+  
 }
