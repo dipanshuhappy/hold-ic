@@ -55,7 +55,7 @@ export class HoldIC {
       }
   }
 
-  async getPrinicpal(){
+  async getPrinicpal(): Promise<string|undefined>{
      switch (this.wallet) {
       case "Plug":
         return this.provider?.principalId     

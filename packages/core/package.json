@@ -1,6 +1,6 @@
 {
   "name": "@hold-ic/core",
-  "version":"1.0.2",
+  "version":"1.0.4",
   "private": false,
   "description": "ICP utlitily functions",
   "main": "lib/index.js",

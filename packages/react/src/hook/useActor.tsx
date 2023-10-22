@@ -2,7 +2,7 @@ import { CanistersInterface } from "@hold-ic/core"
 import HoldIcContext from "../context/hold-ic"
 import { useContext, useEffect, useState } from "react"
 import { ActorSubclass } from "@dfinity/agent"
-export default function useActor<T>(name: keyof CanistersInterface) {
+export default function useActor<T>(name: keyof CanistersInterface): ActorSubclass<T> | undefined {
     const holdIc = useContext(HoldIcContext)
     const [actor, setActor] = useState<ActorSubclass<T>>()
     useEffect(() => {

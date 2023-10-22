@@ -1,12 +1,12 @@
 {
   "name": "@hold-ic/react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "ICP utils for @hold-ic/core",
   "main": "lib/index.js",
   "module": "lib/index.module.js",
   "scripts": {
-    "compile": "microbundle "
+    "compile": "tsc "
   },
   "keywords": [],
   "author": "",
