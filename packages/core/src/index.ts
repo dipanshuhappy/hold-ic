@@ -2,6 +2,7 @@ import { Provider } from "@psychedelic/plug-inpage-provider";
 import { connectPlug } from "./connector";
 import { WalletType } from "./connector/types";
 import { IDL } from "@dfinity/candid";
+import { ActorSubclass } from "@dfinity/agent";
 
 
 export type PlugProvider = Provider
@@ -13,8 +14,25 @@ export type CanistersInterface = {
   };
 };
 export type  CanisterInterfaceKey  =  keyof CanistersInterface
+export interface HoldICInterface {
+  provider: PlugProvider | undefined;
+  whitelist: string[];
+  host: string;
+  wallet: WalletType | undefined;
+  canisters?: CanistersInterface;
 
-export class HoldIC {
+  
+
+  connect(type: WalletType, onConnectCallback: (...args: any[]) => any): Promise<void>;
+
+  getPrinicpal(): Promise<string | undefined>;
+
+  isConnected(): Promise<boolean>;
+
+  getActor<T>(name: keyof CanistersInterface): Promise<ActorSubclass<T> | undefined>; 
+}
+
+export class HoldIC implements HoldICInterface {
 
   provider  : PlugProvider | undefined ;
   whitelist : string[] = [];
@@ -71,17 +89,17 @@ export class HoldIC {
         break;
     }
   }
-  async getActor(name:CanisterInterfaceKey){
+  async getActor<T>(name:CanisterInterfaceKey){
     switch(this.wallet){
       case "Plug":
         if(this.canisters && this.canisters[name]){
-          return await (window as any)?.ic?.plug.createActor({
+          return (await ((window as any)?.ic?.plug.createActor({
             canisterId: this.canisters[name].canisterId,
-            interfaceFactory: this.canisters[name].idlFactory}
-          )
+            interfaceFactory: this.canisters[name].idlFactory} 
+          ))) as ActorSubclass<T>
         }
         throw Error("Canister with name does not exist")
-        
     }
+    return;
   }
 }
