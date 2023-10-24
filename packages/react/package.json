@@ -1,10 +1,10 @@
 {
   "name": "@hold-ic/react",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": false,
   "description": "ICP utils for @hold-ic/core",
   "main": "lib/index.js",
-  "module": "lib/index.module.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "compile": "tsc "
   },
@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "@dfinity/agent": "^0.19.3",
-    "@hold-ic/core": "^1.0.6"
+    "@hold-ic/core": "^1.1.3"
   }
 }
